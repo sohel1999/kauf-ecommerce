@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ce7f546-45cf-419a-87d4-3cc5b59ff236" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/auth/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/layouts/master.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/partials/footer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/partials/header.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/partials/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/dashboard/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/auth/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/auth/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +169,7 @@
       <updated>1575044722890</updated>
       <workItem from="1575044734208" duration="7880000" />
       <workItem from="1575184589007" duration="3483000" />
-      <workItem from="1575204605929" duration="3477000" />
+      <workItem from="1575204605929" duration="7202000" />
     </task>
     <servers />
   </component>
