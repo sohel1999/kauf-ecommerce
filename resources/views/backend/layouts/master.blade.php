@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{asset('backend/')}}/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="{{asset('backend/')}}/assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="{{asset('backend/')}}/assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     @stack('css')
     <title>@yield('title','Dashboard')</title>
 </head>
@@ -86,6 +87,8 @@
 <script src="{{asset('backend/')}}/assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
 <script src="{{asset('backend/')}}/assets/vendor/charts/c3charts/C3chartjs.js"></script>
 <script src="{{asset('backend/')}}/assets/libs/js/dashboard-ecommerce.js"></script>
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+{!! Toastr::message() !!}
 @stack('js')
 </body>
 

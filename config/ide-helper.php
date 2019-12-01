@@ -102,7 +102,7 @@ return array(
 
     /*
     |--------------------------------------------------------------------------
-    | Interface implementations
+    | Contracts implementations
     |--------------------------------------------------------------------------
     |
     | These interfaces will be replaced with the implementing class. Some interfaces

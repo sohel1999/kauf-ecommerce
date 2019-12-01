@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -41,6 +42,7 @@ class AuthController extends Controller
     {
         Auth::guard('web')->logout();
         $request->session()->invalidate();
+        Toastr::success('Successfully logout', 'Logout', ["positionClass" => "toast-top-center"]);
         return redirect()->route('backend.login.get');
     }
 

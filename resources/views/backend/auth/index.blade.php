@@ -11,6 +11,7 @@
     <link href="{{asset('backend/')}}/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('backend/')}}/assets/libs/css/style.css">
     <link rel="stylesheet" href="{{asset('backend/')}}/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <style>
         html,
         body {
@@ -67,6 +68,8 @@
 <script src="{{asset('backend/')}}/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
 <!-- bootstap bundle js -->
 <script src="{{asset('backend/')}}/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+{!! Toastr::message() !!}
 </body>
 
 </html>

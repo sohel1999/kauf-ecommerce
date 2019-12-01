@@ -2,10 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ce7f546-45cf-419a-87d4-3cc5b59ff236" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Contracts/BaseContracts.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/BaseRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Traits/FlashMessages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ecom-1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ecom-1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/ide-helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/ide-helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/auth/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/auth/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layouts/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -120,6 +132,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
       <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
       <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
+      <path value="$PROJECT_DIR$/vendor/brian2694/laravel-toastr" />
     </include_path>
   </component>
   <component name="ProjectId" id="1UIWitsMlw0LhP07WFOFCWvEka8" />
@@ -169,7 +182,7 @@
       <updated>1575044722890</updated>
       <workItem from="1575044734208" duration="7880000" />
       <workItem from="1575184589007" duration="3483000" />
-      <workItem from="1575204605929" duration="7202000" />
+      <workItem from="1575204605929" duration="13053000" />
     </task>
     <servers />
   </component>
@@ -194,7 +207,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/backend/layouts/master.blade.php</url>
-          <line>60</line>
+          <line>61</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
