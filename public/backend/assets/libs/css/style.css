@@ -1228,6 +1228,7 @@ Top Header
     box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
     -webkit-transition: all 0.3s ease;
     min-height: 60px;
+    background: linear-gradient(90deg,#5851d8,#817ae3)!important;
 }
 
 
@@ -1260,9 +1261,8 @@ Top Header
     padding: 13px 20px;
     font-size: 16px;
     line-height: 2;
-    color: #82849f;
+    color: #fff;
 }
-
 
 /* ------  top-search-bar --------  */
 

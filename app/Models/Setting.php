@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\Config;
 class Setting extends Model
 {
 
-    protected $primaryKey = false;
-
     protected $table = 'settings';
 
 
@@ -30,10 +28,9 @@ class Setting extends Model
     {
         $setting = new self();
         $entry = $setting->where('key', $key)->firstOrFail();
-        $data = [
-            $key => $value
-        ];
-        $entry->saveOrFail($data);
+        $entry->value = $value;
+
+        $entry->saveOrFail();
 
         Config::set('key', $value);
         if (Config::get($key) === $value) {

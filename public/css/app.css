@@ -1,0 +1,43 @@
+.navbar-right-top .nav-item .nav-link {
+    padding: 13px 20px;
+    font-size: 16px;
+    line-height: 2;
+    color: #fff;
+}
+
+body {
+    font-size: 14px;
+    background-color: #f9fbff !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+.nav-left-sidebar .navbar-nav .nav-link:focus,
+.nav-left-sidebar .navbar-nav .nav-link.active {
+    background-color: #d0d0f5;
+    color: #000067;
+    border-radius: 4px;
+}
+
+.tab-vertical .nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: 4px !important;
+    border-top-right-radius: 0px !important;
+    background: #645cf3;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+
+a.btn-primary {
+    color: #fff;
+    background-color: #5969ff;
+    border-color: #5969ff;
+    font-weight: 700;
+}
+
+a i.ti-plus {
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+}

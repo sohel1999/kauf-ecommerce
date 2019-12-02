@@ -7,6 +7,7 @@ use App\Models\Setting;
 use App\Traits\ImageUploadAble;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 
 class SettingController extends BaseController
 {
@@ -22,11 +23,26 @@ class SettingController extends BaseController
 
     public function update(Request $request)
     {
-        $keys = $request->except('_token');
 
-        foreach ($keys as $key => $value) {
-            $setting = Setting::where('key', $key)->first();
-            $setting->update([$key => $value]);
+        if ($request->has('site_logo')) {
+
+            if (config('settings.site_logo') != null) {
+                $this->deleteOne(config('settings.site_logo'));
+            }
+            $logo = $this->uploadOne($request->file('site_logo'));
+            Setting::set('site_logo', $logo);
+        } elseif ($request->has('site_favicon')) {
+            if (config('settings.site_favicon') != null) {
+                $this->deleteOne(config('settings.site_favicon'));
+            }
+            $favicon = $this->uploadOne($request->file('site_favicon'));
+            Setting::set('site_favicon', $favicon);
+        } else {
+            $keys = $request->except('_token');
+
+            foreach ($keys as $key => $value) {
+                Setting::set($key, $value);
+            }
         }
         Toastr::success('Successfully setting update', 'Setting', ["positionClass" => "toast-top-right"]);
         return redirect()->back();
