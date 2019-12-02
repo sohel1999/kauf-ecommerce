@@ -12,7 +12,7 @@ class AuthController extends Controller
 {
     use AuthenticatesUsers;
 
-     protected $redirectTo = '/dashboard';
+    protected $redirectTo = '/dashboard';
 
 //     public function __construct()
 //     {
@@ -20,14 +20,15 @@ class AuthController extends Controller
 //     }
 
 
-    public function showLogin(){
+    public function showLogin()
+    {
         return view('backend.auth.index');
     }
 
     public function loginProcess(Request $request)
     {
         $this->validate($request, [
-            'email'   => 'required|email',
+            'email' => 'required|email',
             'password' => 'required'
         ]);
         if (Auth::guard('web')->attempt([
@@ -38,6 +39,7 @@ class AuthController extends Controller
         }
         return back()->withInput($request->only('email', 'remember'));
     }
+
     public function logout(Request $request)
     {
         Auth::guard('web')->logout();

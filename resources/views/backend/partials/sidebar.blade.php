@@ -12,7 +12,7 @@
                         Menu
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false"
+                        <a class="nav-link {{Route::currentRouteName()}}" href="#" data-toggle="collapse" aria-expanded="false"
                            data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Catalog
                             <span class="badge badge-success">6</span></a>
                         <div id="submenu-1" class="collapse submenu" style="">
@@ -48,22 +48,12 @@
                             </ul>
                         </div>
                     </li>
-
+                    <div class="dropdown-divider"></div>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                           data-target="#submenu-5" aria-controls="submenu-5"><i
-                                class="fas fa-fw fa-table"></i>Tables</a>
-                        <div id="submenu-5" class="collapse submenu" style="">
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/general-table.html">General Tables</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/data-tables.html">Data Tables</a>
-                                </li>
-                            </ul>
-                        </div>
+                        <a class="nav-link {{Route::currentRouteName()=='setting.index'?'active':''}}" href="{{route('setting.index')}}">
+                            <i class="ti-settings"></i>Setting</a>
                     </li>
+
 
                 </ul>
             </div>
