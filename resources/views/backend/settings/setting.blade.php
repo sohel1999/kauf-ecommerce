@@ -2,7 +2,7 @@
 
 @section('title') {{$pageTitle}} @endsection
 @push('css')
-    <style>
+    <style xmlns="http://www.w3.org/1999/html">
         img.site-logo {
             vertical-align: middle;
             border-style: none;
@@ -79,7 +79,7 @@
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent3">
-            {{-- general-vertical start--}}
+                {{-- general-vertical start--}}
                 <div class="tab-pane fade show active" id="general-vertical" role="tabpanel"
                      aria-labelledby="general-vertical">
                     <div class="card">
@@ -205,11 +205,15 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="google_analytics" class="col-form-label">Google Analytics</label>
-                                    <input id="google_analytics" type="text" value="{{config('settings.google_analytics')}}" name="google_analytics" class="form-control">
+                                    <input id="google_analytics" type="text"
+                                           value="{{config('settings.google_analytics')}}" name="google_analytics"
+                                           class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="facebook_pixels" class="col-form-label">Facebook Pixels</label>
-                                    <input id="facebook_pixels" type="text" value="{{config('settings.facebook_pixels')}}" name="facebook_pixels" class="form-control">
+                                    <input id="facebook_pixels" type="text"
+                                           value="{{config('settings.facebook_pixels')}}" name="facebook_pixels"
+                                           class="form-control">
                                 </div>
 
                                 <button type="submit" class="btn btn-primary float-right">Update</button>
@@ -227,24 +231,33 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="social_facebook" class="col-form-label">Facebook</label>
-                                    <input id="social_facebook" type="text" value="{{config('settings.social_facebook')}}" name="social_facebook" class="form-control">
+                                    <input id="social_facebook" type="text"
+                                           value="{{config('settings.social_facebook')}}" name="social_facebook"
+                                           class="form-control @error('social_facebook') is-invalid @enderror">
+                                    <span> @error('social_facebook') {{$message}} @enderror</span>
                                 </div>
                                 <div class="form-group">
                                     <label for="social_twitter" class="col-form-label">twitter</label>
-                                    <input id="social_twitter" type="text" value="{{config('settings.social_twitter')}}" name="social_twitter" class="form-control">
+                                    <input id="social_twitter" type="text" value="{{config('settings.social_twitter')}}"
+                                           name="social_twitter" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="social_instagram" class="col-form-label">Instagram</label>
-                                    <input id="social_instagram" type="text" value="{{config('settings.social_instagram')}}" name="social_instagram"
+                                    <input id="social_instagram" type="text"
+                                           value="{{config('settings.social_instagram')}}" name="social_instagram"
                                            class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="social_linkedin" class="col-form-label">Linkedin</label>
-                                    <input id="social_linkedin" type="text" value="{{config('settings.social_linkedin')}}" name="social_linkedin" class="form-control">
+                                    <input id="social_linkedin" type="text"
+                                           value="{{config('settings.social_linkedin')}}" name="social_linkedin"
+                                           class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="social_pinterest" class="col-form-label">Pinterest</label>
-                                    <input id="social_pinterest" type="text" value="{{config('settings.social_pinterest')}}" name="social_pinterest" class="form-control">
+                                    <input id="social_pinterest" type="text"
+                                           value="{{config('settings.social_pinterest')}}" name="social_pinterest"
+                                           class="form-control">
                                 </div>
                                 <button type="submit" class="btn btn-primary float-right">Update</button>
                             </form>
@@ -260,29 +273,41 @@
                             <form method="post" action="{{route('setting.update')}}">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="stripe_payment_method" class="col-form-label">Stripe Payment Method</label>
-                                    <input id="stripe_payment_method" type="text" value="{{config('settings.stripe_payment_method')}}" name="stripe_payment_method" class="form-control">
+                                    <label for="stripe_payment_method" class="col-form-label">Stripe Payment
+                                        Method</label>
+                                    <input id="stripe_payment_method" type="text"
+                                           value="{{config('settings.stripe_payment_method')}}"
+                                           name="stripe_payment_method" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="stripe_key" class="col-form-label">Stripe Key</label>
-                                    <input id="stripe_key" type="text" value="{{config('settings.stripe_key')}}" name="stripe_key" class="form-control">
+                                    <input id="stripe_key" type="text" value="{{config('settings.stripe_key')}}"
+                                           name="stripe_key" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="stripe_secret_key" class="col-form-label">Stripe Secret Key</label>
-                                    <input id="stripe_secret_key" type="text" value="{{config('settings.stripe_secret_key')}}" name="stripe_secret_key"
+                                    <input id="stripe_secret_key" type="text"
+                                           value="{{config('settings.stripe_secret_key')}}" name="stripe_secret_key"
                                            class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="paypal_payment_method" class="col-form-label">Paypal Payment Method</label>
-                                    <input id="paypal_payment_method" type="text" value="{{config('settings.paypal_payment_method')}}" name="paypal_payment_method" class="form-control">
+                                    <label for="paypal_payment_method" class="col-form-label">Paypal Payment
+                                        Method</label>
+                                    <input id="paypal_payment_method" type="text"
+                                           value="{{config('settings.paypal_payment_method')}}"
+                                           name="paypal_payment_method" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="paypal_client_id" class="col-form-label">Paypal Client Id</label>
-                                    <input id="paypal_client_id" type="text" value="{{config('settings.paypal_client_id')}}" name="paypal_client_id" class="form-control">
+                                    <input id="paypal_client_id" type="text"
+                                           value="{{config('settings.paypal_client_id')}}" name="paypal_client_id"
+                                           class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="paypal_secret_id" class="col-form-label">Paypal Secret Id</label>
-                                    <input id="paypal_secret_id" type="text" value="{{config('settings.paypal_secret_id')}}" name="paypal_secret_id" class="form-control">
+                                    <input id="paypal_secret_id" type="text"
+                                           value="{{config('settings.paypal_secret_id')}}" name="paypal_secret_id"
+                                           class="form-control">
                                 </div>
                                 <button type="submit" class="btn btn-primary float-right">Update</button>
                             </form>
@@ -298,15 +323,18 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="bkash_number" class="col-form-label">bkash Number</label>
-                                    <input id="bkash_number" type="text" value="{{config('settings.bkash_number')}}" name="bkash_number" class="form-control">
+                                    <input id="bkash_number" type="text" value="{{config('settings.bkash_number')}}"
+                                           name="bkash_number" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="rocket_number" class="col-form-label">Rocket Number</label>
-                                    <input id="rocket_number" type="text" value="{{config('settings.rocket_number')}}" name="rocket_number" class="form-control">
+                                    <input id="rocket_number" type="text" value="{{config('settings.rocket_number')}}"
+                                           name="rocket_number" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="dutch_bangla_number" class="col-form-label">Dutch Bangla Number</label>
-                                    <input id="dutch_bangla_number" type="text" value="{{config('settings.dutch_bangla_number')}}" name="dutch_bangla_number"
+                                    <input id="dutch_bangla_number" type="text"
+                                           value="{{config('settings.dutch_bangla_number')}}" name="dutch_bangla_number"
                                            class="form-control">
                                 </div>
                                 <button type="submit" class="btn btn-primary float-right">Update</button>
@@ -323,7 +351,8 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="tax" class="col-form-label">Tax (%)</label>
-                                    <input id="tax" type="text" value="{{config('settings.tax')}}" name="tax" class="form-control">
+                                    <input id="tax" type="text" value="{{config('settings.tax')*100}}" name="tax"
+                                           class="form-control percent">
                                 </div>
 
                                 <button type="submit" class="btn btn-primary float-right">Update</button>
@@ -338,9 +367,8 @@
 @endsection
 @push('js')
     <script>
-        $(function () {
-            "use strict";
-            $(".tax").inputmask("%");
-        })
+        $(document).ready(function () {
+            $('.percent').inputmask('########%', {reverse: true});
+        });
     </script>
 @endpush
