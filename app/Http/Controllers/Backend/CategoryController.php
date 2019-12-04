@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\CategoryContract\CategoryContract;
 use App\Http\Controllers\BaseController;
 use App\Repositories\CategoryRepository;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -58,9 +59,9 @@ class CategoryController extends BaseController
      */
     public function store(Request $request)
     {
-
+        $this->setPageTitle('Category', 'Category create');
         $validator = Validator::make($request->all(), [
-            'name' => 'required|max:191',
+            'name' => 'required|max:191|unique:categories,name',
             'parent_id' => 'required|not_in:0',
             'image' => 'mimes:jpg,jpeg,png|max:1000'
         ]);
@@ -68,6 +69,17 @@ class CategoryController extends BaseController
             return redirect()->back()
                 ->withErrors($validator)
                 ->withInput();
+        }
+        $params = $request->except('_token');
+
+        $category = $this->categoryRepository->createCategory($params);
+
+        if (!$category) {
+            Toastr::error('Error occurred while creating category', 'Category', ["positionClass" => "toast-top-right"]);
+            return redirect()->back();
+        } else {
+            Toastr::success('Category added successfully', 'Category', ["positionClass" => "toast-top-right"]);
+            return redirect()->route('categories.index');
         }
 
     }
@@ -91,8 +103,10 @@ class CategoryController extends BaseController
      */
     public function edit($id)
     {
-        $this->setPageTitle('category', 'category create');
-        return view('backend.categories.edit');
+        $targetCategory = $this->categoryRepository->findCategoryById($id);
+        $categories = $this->categoryRepository->listCategories();
+        $this->setPageTitle('category', 'Edit Category :' . $targetCategory->name);
+        return view('backend.categories.edit', compact('targetCategory', 'categories'));
     }
 
     /**

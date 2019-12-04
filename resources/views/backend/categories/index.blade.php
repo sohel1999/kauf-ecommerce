@@ -76,7 +76,8 @@
                                                     Action
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                                                    <a class="dropdown-item" href="#">Edit</a>
+                                                    <a class="dropdown-item"
+                                                       href="{{route('categories.edit',$category->id)}}">Edit</a>
                                                     <a class="dropdown-item" href="#">Delete</a>
                                                 </div>
                                             </div>
@@ -87,11 +88,12 @@
                             <tfoot>
                             <tr>
                                 <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
+                                <th>is_menu</th>
+                                <th>status</th>
+                                <th>featured</th>
+                                <th>parent_id</th>
+                                <th>image</th>
+                                <th>action</th>
                             </tr>
                             </tfoot>
                         </table>

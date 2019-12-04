@@ -7,7 +7,10 @@ namespace App\Repositories;
 use App\CategoryContract\CategoryContract;
 use App\Models\Category;
 use App\Traits\ImageUploadAble;
+use Doctrine\Instantiator\Exception\InvalidArgumentException;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Str;
 
 class CategoryRepository extends BaseRepository implements CategoryContract
 {
@@ -48,7 +51,7 @@ class CategoryRepository extends BaseRepository implements CategoryContract
      */
     public function findCategoryById(int $id)
     {
-        // TODO: Implement findCategoryById() method.
+        return $this->find($id);
     }
 
     /**
@@ -57,7 +60,23 @@ class CategoryRepository extends BaseRepository implements CategoryContract
      */
     public function createCategory(array $params)
     {
-        // TODO: Implement createCategory() method.
+        try {
+            $collection = collect($params);
+            $image = null;
+            if ($collection->has('image')) {
+                $image = $this->uploadOne($params['image'], 'uploads/categories');
+            }
+            $slug = Str::slug($collection->get('name'));
+            $is_menu = $collection->has('is_menu') ? '1' : '0';
+            $featured = $collection->has('featured') ? '1' : '0';
+            $status = $collection->has('featured') ? '1' : '0';
+            $merge = $collection->merge(compact('is_menu', 'featured', 'status', 'image', 'slug'));
+            $category = new Category($merge->all());
+            $category->save();
+            return $category;
+        } catch (QueryException $exception) {
+            throw  new InvalidArgumentException($exception->getMessage());
+        }
     }
 
     /**
