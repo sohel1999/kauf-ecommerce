@@ -2,12 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ce7f546-45cf-419a-87d4-3cc5b59ff236" name="Default Changelist" comment="">
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/CategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CategoryRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/categories/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/categories/create.blade.php" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/resources/views/backend/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/categories/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/categories/index.blade.php" afterDir="false" />
+=======
+>>>>>>> c1fa431b70425f38cde1dd23b6a984da9a275d7b
+>>>>>>> be3fa8cf1e0b2a423983052a2f1ac8a5cae2c15a
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -138,18 +147,19 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/backend/categories" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\ecom-1\resources\views\backend\categories" />
-      <recent name="F:\ecom-1\public\backend" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\ecom-1\app\Http\Controllers\Frontend" />
       <recent name="F:\ecom-1\app\Models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="F:\ecom-1\resources\views\backend\categories" />
+      <recent name="F:\ecom-1\public\backend" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -187,7 +197,16 @@
       <workItem from="1575301598021" duration="8184000" />
       <workItem from="1575314900670" duration="1747000" />
       <workItem from="1575454176125" duration="8660000" />
+<<<<<<< HEAD
       <workItem from="1575469618898" duration="14940000" />
+=======
+<<<<<<< HEAD
+      <workItem from="1575469618898" duration="3226000" />
+      <workItem from="1575474541812" duration="1944000" />
+=======
+      <workItem from="1575469618898" duration="6580000" />
+>>>>>>> c1fa431b70425f38cde1dd23b6a984da9a275d7b
+>>>>>>> be3fa8cf1e0b2a423983052a2f1ac8a5cae2c15a
     </task>
     <servers />
   </component>
