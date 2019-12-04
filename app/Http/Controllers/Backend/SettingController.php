@@ -35,11 +35,10 @@ class SettingController extends BaseController
             if (config('settings.site_favicon') != null) {
                 $this->deleteOne(config('settings.site_favicon'));
             }
-            $favicon = $this->uploadOne($request->file('site_favicon'));
+            $favicon = $this->uploadOne($request->file('site_favicon'), 'uploads/sitelogo');
             Setting::set('site_favicon', $favicon);
         } else {
             $keys = $request->except('_token');
-
             foreach ($keys as $key => $value) {
                 Setting::set($key, $value);
             }

@@ -65,10 +65,11 @@ class CategoryController extends BaseController
             'image' => 'mimes:jpg,jpeg,png|max:1000'
         ]);
         if ($validator->fails()) {
-            return redirect()->route('categories.store')
+            return redirect()->back()
                 ->withErrors($validator)
                 ->withInput();
         }
+
     }
 
     /**
