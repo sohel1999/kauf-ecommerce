@@ -62,6 +62,10 @@ class SettingsTableSeeder extends Seeder
             'value' => '',
         ],
         [
+            'key' => 'social_pinterest',
+            'value' => '',
+        ],
+        [
             'key' => 'google_analytics',
             'value' => '',
         ],
@@ -96,6 +100,18 @@ class SettingsTableSeeder extends Seeder
         [
             'key' => 'bkash_number',
             'value' => '01770146178',
+        ],
+        [
+            'key' => 'rocket_number',
+            'value' => '01770146178',
+        ],
+        [
+            'key' => 'dutch_bangla_number',
+            'value' => '01770146178',
+        ],
+        [
+            'key' => 'tax',
+            'value' => '15',
         ],
     ];
 

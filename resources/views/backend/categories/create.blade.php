@@ -33,28 +33,37 @@
                         @csrf
                         <div class="form-group">
                             <label for="name" class="col-form-label">Category Name</label>
-                            <input id="name" type="text" name="name" class="form-control" placeholder="category name">
+                            <input
+                                id="name" type="text" name="name" value="{{request()->old('name')}}"
+                                class="form-control @error('name') is-invalid @enderror"
+                                placeholder="category name">
                             @error('name') <span class="text-danger">{{$message}}</span>@enderror
                         </div>
                         <div class="form-group">
                             <label for="input-select">Parent Category</label>
-                            <select class="form-control" id="input-select" name="parent_id">
-                                <option value="1">Root</option>
+                            <select class="form-control @error('parent_id') is-invalid @enderror" id="input-select"
+                                    name="parent_id">
+                                <option value="0">Select a parent category</option>
                                 @isset($categories)
                                     @foreach($categories as $key=>$category)
                                         <option value="{{$key}}">{{$category->name}}</option>
                                     @endforeach
                                 @endisset
                             </select>
+                            @error('parent_id') <span class="text-danger">{{$message}}</span>@enderror
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea class="form-control" id="description" rows="3">description</textarea>
+                            <textarea class="form-control" name="description" id="description"
+                                      rows="3">{{request()->old('description')}}</textarea>
                         </div>
                         <div class="form-group">
                             <div class="custom-file mb-3">
-                                <input type="file" name="image" class="custom-file-input" id="customFile">
+                                <input type="file" name="image"
+                                       class="custom-file-input @error('image') is-invalid @enderror "
+                                       id="customFile">
                                 <label class="custom-file-label" for="customFile">File Input</label>
+                                @error('image') <span class="text-danger">{{$message}}</span>@enderror
                             </div>
                         </div>
                         <div class="form-group">
