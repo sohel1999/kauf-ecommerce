@@ -17,7 +17,7 @@
                     <li class="nav-item">
                         <a class="nav-link {{Route::currentRouteName()=='categories.index'?'active':''}}"
                            href="{{route('categories.index')}}">
-                            Category</a>
+                            <i class="fas fa-certificate"></i>  Category</a>
                     </li>
                     <div class="dropdown-divider"></div>
 

@@ -22,9 +22,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        foreach ($this->repositories as $interface => $repository) {
-            $this->app->bind($interface, $repository);
-        }
+        $this->app->bind(CategoryContract::class, CategoryRepository::class);
     }
 
     /**
@@ -34,6 +32,14 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+//        $this->app->bind(
+//            'App\CategoryContract\CategoryContract',
+//            'App\Repositories\CategoryRepository'
+//        );
+//        foreach ($this->repositories as $interface=>$repository){
+//
+//        }
+
+
     }
 }

@@ -8,13 +8,13 @@ use Illuminate\Support\Str;
 
 trait  ImageUploadAble
 {
-    public function uploadOne($file)
+    public function uploadOne($file, $path = null)
     {
 
         $name = Str::random(25);
 
         $fileName = $name . '.' . $file->getClientOriginalExtension();
-        $file->move(public_path('uploads/sitelogo'), $fileName);
+        $file->move(public_path($path), $fileName);
         return $fileName;
     }
 

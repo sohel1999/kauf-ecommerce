@@ -6,6 +6,7 @@ use App\CategoryContract\CategoryContract;
 use App\Http\Controllers\BaseController;
 use App\Repositories\CategoryRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends BaseController
 {
@@ -16,10 +17,12 @@ class CategoryController extends BaseController
      */
     private $categoryRepository;
 
-//    public function __construct(CategoryRepository $categoryRepository)
-//    {
-//        $this->categoryRepository = $categoryRepository;
-//    }
+    public function __construct(CategoryContract $categoryRepository)
+    {
+
+        $this->categoryRepository = $categoryRepository;
+
+    }
 
     /**
      * Display a listing of the resource.
@@ -29,9 +32,9 @@ class CategoryController extends BaseController
     public function index()
     {
         $this->setPageTitle('category', 'category list');
-//        $categories = $this->categoryRepository->listCategories();
-//        dd($categories);
-        return view('backend.categories.index');
+        $categories = $this->categoryRepository->listCategories();
+
+        return view('backend.categories.index', compact('categories'));
     }
 
     /**
@@ -41,8 +44,10 @@ class CategoryController extends BaseController
      */
     public function create()
     {
-        $this->setPageTitle('category', 'category create');
-        return view('backend.categories.create');
+        $this->setPageTitle('Category', 'Category create');
+        $data['categories'] = $this->categoryRepository->createList();
+
+        return view('backend.categories.create', $data);
     }
 
     /**
@@ -53,7 +58,17 @@ class CategoryController extends BaseController
      */
     public function store(Request $request)
     {
-        //
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:191',
+            'parent_id' => 'required|not_in:0',
+            'image' => 'mimes:jpg,jpeg,png|max:1000'
+        ]);
+        if ($validator->fails()) {
+            return redirect()->route('categories.store')
+                ->withErrors($validator)
+                ->withInput();
+        }
     }
 
     /**
@@ -75,7 +90,8 @@ class CategoryController extends BaseController
      */
     public function edit($id)
     {
-        //
+        $this->setPageTitle('category', 'category create');
+        return view('backend.categories.edit');
     }
 
     /**

@@ -41,3 +41,43 @@ a i.ti-plus {
     color: #fff;
     font-weight: bold;
 }
+
+h5.section-title.bg-white.py-2.pl-2 i {
+    color: #000 !important;
+    font-size: 22px;
+    margin-right: 3px !important;
+    margin-top: 3px !important;
+}
+
+.page-breadcrumb .breadcrumb {
+    border-radius: 0px;
+    border-top: 1px solid #7069de;
+    padding-top: 10px;
+    font-size: 17px;
+    color: #0000;
+}
+
+.page-breadcrumb .breadcrumb .breadcrumb-link {
+    color: #000000;
+}
+
+.pageheader-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    color: #000;
+    font-family: sans-serif;
+}
+
+.dropdown-divider {
+    height: 0;
+    margin: .5rem 0;
+    overflow: hidden;
+    border-top: 1px solid #8079e3;
+}
+
+.custom {
+    margin-right: 29px;
+}

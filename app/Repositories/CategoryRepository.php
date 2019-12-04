@@ -5,6 +5,7 @@ namespace App\Repositories;
 
 
 use App\CategoryContract\CategoryContract;
+use App\Models\Category;
 use App\Traits\ImageUploadAble;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,7 +15,12 @@ class CategoryRepository extends BaseRepository implements CategoryContract
     use ImageUploadAble;
 
 
-    public function __construct(Model $model)
+    /**
+     * @var Category
+     */
+
+
+    public function __construct(Category $model)
     {
         parent::__construct($model);
         $this->model = $model;
@@ -28,7 +34,12 @@ class CategoryRepository extends BaseRepository implements CategoryContract
      */
     public function listCategories(string $order = 'id', string $sort = 'desc', array $columns = ['*'])
     {
-        $this->all($columns, $order, $sort);
+        return $this->all();
+    }
+
+    public function createList()
+    {
+        return $this->model->all(['id', 'name']);
     }
 
     /**

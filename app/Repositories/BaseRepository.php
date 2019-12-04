@@ -46,7 +46,7 @@ class BaseRepository implements BaseContracts
      */
     public function all($columns = ['*'], string $oderBy = 'id', string $sortBy = 'desc')
     {
-        return $this->model->orderBy($oderBy, $sortBy)->get($columns);
+        return $this->model->orderBy($oderBy, $sortBy)->with('parent')->get($columns);
     }
 
     /**
@@ -103,6 +103,6 @@ class BaseRepository implements BaseContracts
      */
     public function delete(int $id): bool
     {
-        return  $this->model->find($id)->delete();
+        return $this->model->find($id)->delete();
     }
 }

@@ -29,7 +29,7 @@ class SettingController extends BaseController
             if (config('settings.site_logo') != null) {
                 $this->deleteOne(config('settings.site_logo'));
             }
-            $logo = $this->uploadOne($request->file('site_logo'));
+            $logo = $this->uploadOne($request->file('site_logo'), 'uploads/sitelogo');
             Setting::set('site_logo', $logo);
         } elseif ($request->has('site_favicon')) {
             if (config('settings.site_favicon') != null) {

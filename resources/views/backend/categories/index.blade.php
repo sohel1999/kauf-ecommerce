@@ -3,26 +3,19 @@
 @section('title') {{$pageTitle}}@endsection
 
 @section('content')
-    <div class="row">
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            <div class="page-header">
-                <h2 class="pageheader-title">Category List</h2>
-                <div class="page-breadcrumb">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="" class="breadcrumb-link">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Category</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
+    @component('backend.componets.breadcrumb')
+        @slot('title')
+            Category List
+        @endslot
+        @slot('page')
+            Category
+        @endslot
+    @endcomponent
     <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
                 <div class="card-header">
-                    <a href="" class="btn btn-primary float-right">
+                    <a href="{{route('categories.create')}}" class="btn btn-primary float-right">
                         <i class="ti-plus"></i>
                         Add Category
                     </a>
@@ -33,22 +26,63 @@
                             <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
+                                <th>is_menu</th>
+                                <th>status</th>
+                                <th>featured</th>
+                                <th>parent_id</th>
+                                <th>image</th>
+                                <th>action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Donna Snider</td>
-                                <td>Customer Support</td>
-                                <td>New York</td>
-                                <td>27</td>
-                                <td>2011/01/25</td>
-                                <td>$112,000</td>
-                            </tr>
+
+                            @foreach($categories as $key=>$category)
+                                <tr>
+                                    <td>{{$category->name}}</td>
+                                    <td>
+                                        @php
+                                            if($category->is_menu){
+                                            echo "<span class=\"badge badge-success\">yes</span>";
+                                            }else{
+                                            echo "<span class=\"badge badge-danger\">no</span>";
+                                            }
+                                        @endphp
+                                    </td>
+                                    <td> @php
+                                            if($category->status){
+                                            echo "<span class=\"badge badge-success\">yes</span>";
+                                            }else{
+                                            echo "<span class=\"badge badge-danger\">no</span>";
+                                            }
+                                        @endphp</td>
+                                    <td> @php
+                                            if($category->featured){
+                                            echo "<span class=\"badge badge-success\">yes</span>";
+                                            }else{
+                                            echo "<span class=\"badge badge-danger\">no</span>";
+                                            }
+                                        @endphp</td>
+                                    <td>{{ optional($category->parent)->name}}</td>
+                                    <td>
+                                        <img src="{{$category->image}}" alt="" width="100px"
+                                             class="rounded-circle mr-3">
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="dropdown mr-1">
+                                                <button type="button" class="btn btn-primary dropdown-toggle"
+                                                        id="dropdownMenuOffset" data-toggle="dropdown"
+                                                        aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+                                                    Action
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                                                    <a class="dropdown-item" href="#">Edit</a>
+                                                    <a class="dropdown-item" href="#">Delete</a>
+                                                </div>
+                                            </div>
+                                    </td>
+                                </tr>
+                            @endforeach
                             </tbody>
                             <tfoot>
                             <tr>

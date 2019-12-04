@@ -37,7 +37,7 @@
     <div class="card ">
         <div class="card-header text-center"><a href="../index.html"><img class="logo-img" src="{{asset('backend')}}/assets/images/logo.png" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
         <div class="card-body">
-            <form method="post" action="{{route('backend.login.post')}}">
+            <form method="post" action="{{route('dashboard.login.post')}}">
                 @csrf
                 <div class="form-group">
                     <input class="form-control form-control-lg"  name="email" id="username" type="text" placeholder="Username" autocomplete="off">
