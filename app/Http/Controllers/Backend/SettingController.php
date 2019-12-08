@@ -35,7 +35,7 @@ class SettingController extends BaseController
         }
         if ($validator->fails()) {
 
-            Toastr::warning("Settings cant't be empty!", 'Setting', ["positionClass" => "toast-top-right"]);
+            Toastr::success("Settings cant't be empty!", 'Setting', ["positionClass" => "toast-top-right"]);
             return redirect()->back();
         }
 

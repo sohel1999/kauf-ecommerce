@@ -29,8 +29,9 @@
                 <h5 class="card-header">Category Form</h5>
 
                 <div class="card-body">
-                    <form action="{{route('categories.store')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('categories.update',$targetCategory->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
                         <div class="form-group">
                             <label for="name" class="col-form-label">Category Name</label>
                             <input
@@ -46,6 +47,7 @@
                                 <option value="0">Select a parent category</option>
                                 @isset($categories)
                                     @foreach($categories as $key=>$category)
+
                                         @if($category->parent_id===$targetCategory->id)
                                             <option value="{{$key}}" selected>{{$category->name}}</option>
                                         @else

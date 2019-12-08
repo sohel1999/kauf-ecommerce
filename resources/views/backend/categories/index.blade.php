@@ -64,7 +64,8 @@
                                         @endphp</td>
                                     <td>{{ optional($category->parent)->name}}</td>
                                     <td>
-                                        <img src="{{$category->image}}" alt="" width="100px"
+                                        <img src="{{asset('/uploads/categories/'.$category->image)}}" alt=""
+                                             width="100px"
                                              class="rounded-circle mr-3">
                                     </td>
                                     <td>
@@ -78,7 +79,15 @@
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
                                                     <a class="dropdown-item"
                                                        href="{{route('categories.edit',$category->id)}}">Edit</a>
-                                                    <a class="dropdown-item" href="#">Delete</a>
+                                                    <form id="delete-form-{{$category->id}}"
+                                                          action="{{route('categories.destroy',$category->id)}}"
+                                                          style="display: none" method="post">
+                                                        @csrf
+                                                        @method('DELETE')
+
+                                                    </form>
+                                                    <a class="dropdown-item" href="#"
+                                                       onclick="document.getElementById('delete-form-{{$category->id}}')">Delete</a>
                                                 </div>
                                             </div>
                                     </td>

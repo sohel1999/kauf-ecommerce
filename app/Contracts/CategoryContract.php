@@ -28,7 +28,7 @@ interface CategoryContract
      * @param array $params
      * @return mixed
      */
-    public function updateCategory(array $params);
+    public function updateCategory(array $params, $id);
 
     /**
      * @param $id

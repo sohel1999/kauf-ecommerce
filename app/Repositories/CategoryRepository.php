@@ -83,9 +83,26 @@ class CategoryRepository extends BaseRepository implements CategoryContract
      * @param array $params
      * @return mixed
      */
-    public function updateCategory(array $params)
+    public function updateCategory(array $params, $id)
     {
-        // TODO: Implement updateCategory() method.
+        $collection = collect($params);
+        $category = $this->findCategoryById($id);
+
+
+        if ($collection->has('image')) {
+            if ($category->image != null) {
+                $this->deleteOne($category->image);
+            }
+            $image = $this->uploadOne($params['image'], 'uploads/categories');
+        }
+        $slug = Str::slug($collection->get('name'));
+        $is_menu = $collection->has('is_menu') ? '1' : '0';
+        $featured = $collection->has('featured') ? '1' : '0';
+        $status = $collection->has('featured') ? '1' : '0';
+        $merge = $collection->merge(compact('is_menu', 'featured', 'status', 'image', 'slug'));
+        $category->update($merge->all());
+        return $category;
+
     }
 
     /**
@@ -94,6 +111,6 @@ class CategoryRepository extends BaseRepository implements CategoryContract
      */
     public function deleteCategory($id)
     {
-        // TODO: Implement deleteCategory() method.
+        return $this->delete($id);
     }
 }

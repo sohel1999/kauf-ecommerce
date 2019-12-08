@@ -323,19 +323,19 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="bkash_number" class="col-form-label">bkash Number</label>
-                                    <input id="bkash_number" type="text" value="{{config('settings.bkash_number')}}"
-                                           name="bkash_number" class="form-control">
+                                    <input id="bkash_number" type="tel" value="{{config('settings.bkash_number')}}"
+                                           name="bkash_number" class="form-control international-inputmask">
                                 </div>
                                 <div class="form-group">
                                     <label for="rocket_number" class="col-form-label">Rocket Number</label>
-                                    <input id="rocket_number" type="text" value="{{config('settings.rocket_number')}}"
-                                           name="rocket_number" class="form-control">
+                                    <input id="rocket_number" type="tel" value="{{config('settings.rocket_number')}}"
+                                           name="rocket_number" class="form-control international-inputmask">
                                 </div>
                                 <div class="form-group">
                                     <label for="dutch_bangla_number" class="col-form-label">Dutch Bangla Number</label>
-                                    <input id="dutch_bangla_number" type="text"
+                                    <input id="dutch_bangla_number" type="tel"
                                            value="{{config('settings.dutch_bangla_number')}}" name="dutch_bangla_number"
-                                           class="form-control">
+                                           class="form-control international-inputmask">
                                 </div>
                                 <button type="submit" class="btn btn-primary float-right">Update</button>
                             </form>
@@ -351,7 +351,7 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="tax" class="col-form-label">Tax (%)</label>
-                                    <input id="tax" type="text" value="{{config('settings.tax')*100}}" name="tax"
+                                    <input id="tax" type="tel" value="{{config('settings.tax')*100}}" name="tax"
                                            class="form-control percent">
                                 </div>
 
@@ -369,6 +369,7 @@
     <script>
         $(document).ready(function () {
             $('.percent').inputmask('########%', {reverse: true});
+            $(".international-inputmask").inputmask("+(88)#######-#####", {reverse: true});
         });
     </script>
 @endpush

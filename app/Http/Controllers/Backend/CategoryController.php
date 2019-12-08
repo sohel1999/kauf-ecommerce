@@ -92,7 +92,7 @@ class CategoryController extends BaseController
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -118,7 +118,16 @@ class CategoryController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        //
+        $params = $request->except('_token');
+        $category = $this->categoryRepository->updateCategory($params, $id);
+
+        if (!$category) {
+            Toastr::error('Error occurred while creating category', 'Category', ["positionClass" => "toast-top-right"]);
+            return redirect()->back();
+        } else {
+            Toastr::success('Category update successfully', 'Category');
+            return redirect()->route('categories.index');
+        }
     }
 
     /**
@@ -129,6 +138,8 @@ class CategoryController extends BaseController
      */
     public function destroy($id)
     {
-        //
+        dd($id);
+        $category = $this->categoryRepository->deleteCategory($id);
+
     }
 }

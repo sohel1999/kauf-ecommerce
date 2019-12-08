@@ -2,7 +2,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                Copyright © 2019 {{config('app.name')}} All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
+                Copyright © 2019 {{config('app.name')}} All rights reserved. KaufBd<a
+                    href="https://github.com/sohel1999">KaufBd</a>.
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                 <div class="text-md-right footer-links d-none d-sm-block">
