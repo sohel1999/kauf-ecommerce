@@ -63,7 +63,7 @@ class CategoryController extends BaseController
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:191|unique:categories,name',
             'parent_id' => 'required|not_in:0',
-            'image' => 'mimes:jpg,jpeg,png|max:1000'
+            'image' => 'mimes:jpg,jpeg,png'
         ]);
         if ($validator->fails()) {
             return redirect()->back()

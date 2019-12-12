@@ -10,6 +10,7 @@ Route::group(['prefix' => 'dashboard', 'namespace' => 'Backend', 'middleware' =>
     Route::get('setting', 'SettingController@index')->name('setting.index');
     Route::post('setting', 'SettingController@update')->name('setting.update');
     Route::resource('categories', 'CategoryController');
+    Route::resource('attributes', 'AttributeController');
 });
 
 Route::get('/', 'Frontend\FrontendController@say');

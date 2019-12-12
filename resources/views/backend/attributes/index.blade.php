@@ -8,7 +8,7 @@
             {{$subTitle}}
         @endslot
         @slot('page')
-            Category
+            Attributes
         @endslot
     @endcomponent
     <div class="row">
@@ -17,7 +17,7 @@
                 <div class="card-header">
                     <a href="{{route('categories.create')}}" class="btn btn-primary float-right">
                         <i class="ti-plus"></i>
-                        Add Category
+                        Add Attributes
                     </a>
                 </div>
                 <div class="card-body">
